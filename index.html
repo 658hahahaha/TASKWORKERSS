@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jadual Kerja - 3 September</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f5f9; /* Kelabu kebiruan lembut */
+        }
+        /* Kesan bayang untuk kad tugasan */
+        .task-card {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: transform 0.2s;
+        }
+        .task-card:hover {
+            transform: translateY(-2px);
+        }
+        /* Corak latar belakang halus untuk membezakan kolum */
+        .col-bg {
+            background-image: radial-gradient(rgba(0,0,0,0.03) 1px, transparent 1px);
+            background-size: 10px 10px;
+        }
+    </style>
+</head>
+<body class="text-gray-800 antialiased min-h-screen lg:h-screen flex flex-col p-3 lg:p-4 overflow-x-hidden overflow-y-auto lg:overflow-hidden">
+
+    <div class="w-full max-w-[1400px] mx-auto flex-1 flex flex-col">
+        
+        <header class="mb-3 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-3 flex-shrink-0 border-b-2 border-gray-200 pb-2">
+            <div>
+                <h1 class="text-2xl font-bold text-gray-900 leading-tight">Jadual Tugasan Khas</h1>
+                <p class="text-sm font-semibold text-blue-600">Khamis, 3 September</p>
+            </div>
+            
+            <div class="inline-flex items-center bg-white rounded-full px-3 py-1 shadow-sm border border-gray-200">
+                <span class="flex h-2 w-2 relative mr-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                </span>
+                <span class="text-xs font-medium text-gray-700" id="current-time">Memuatkan masa...</span>
+            </div>
+        </header>
+
+        <div class="flex-1 grid grid-cols-1 lg:grid-cols-3 gap-4 pb-4 lg:pb-0 min-h-0">
+            
+            <!-- LAJUR 1: PERSIAPAN PAGI -->
+            <div class="flex flex-col bg-blue-50 rounded-xl p-3 border border-blue-100 col-bg">
+                <h2 class="text-base font-bold text-blue-800 mb-3 flex items-center border-b border-blue-200 pb-1">
+                    <svg class="w-5 h-5 mr-1 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    Persiapan Pagi (8:30 AM)
+                </h2>
+
+                <div class="space-y-3 flex-1">
+                    <!-- Tugasan 8:30 - 8:40 -->
+                    <div class="bg-white rounded-lg p-2.5 task-card border-l-4 border-blue-500">
+                        <div class="flex justify-between items-start mb-1.5">
+                            <span class="bg-blue-100 text-blue-800 text-[10px] font-bold px-2 py-0.5 rounded">8:30 AM - 8:40 AM</span>
+                            <span class="text-[10px] text-gray-500 font-medium">10 Minit</span>
+                        </div>
+                        <h3 class="text-sm font-bold text-gray-800 mb-1">Angkat & Bersih Conveyer</h3>
+                        <div class="flex flex-wrap gap-1 mb-1.5">
+                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 text-xs rounded-full font-semibold border border-gray-200">Din</span>
+                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 text-xs rounded-full font-semibold border border-gray-200">Wan</span>
+                            <span class="px-2 py-0.5 bg-yellow-100 text-yellow-800 text-xs rounded-full font-semibold border border-yellow-200">Supri (Bantu)</span>
+                        </div>
+                        <p class="text-[11px] text-gray-600 leading-tight">*Supri masuk 10 minit awal khusus untuk tolong angkat conveyer sahaja.</p>
+                    </div>
+
+                    <!-- Tugasan 8:40 - 9:00 -->
+                    <div class="bg-white rounded-lg p-2.5 task-card border-l-4 border-indigo-500">
+                        <div class="flex justify-between items-start mb-1.5">
+                            <span class="bg-indigo-100 text-indigo-800 text-[10px] font-bold px-2 py-0.5 rounded">Lepas 8:40 AM</span>
+                        </div>
+                        <h3 class="text-sm font-bold text-gray-800 mb-2">Setup Mesin Goreng & Tepung</h3>
+                        
+                        <div class="space-y-2">
+                            <div class="bg-gray-50 p-1.5 rounded border border-gray-100">
+                                <span class="font-bold text-xs text-indigo-700 block mb-0.5">Tugas Wan (Din tunjuk cara):</span>
+                                <ul class="list-disc pl-4 text-[11px] text-gray-700 space-y-0.5">
+                                    <li>Buang minyak lama dalam mesin.</li>
+                                    <li>Masukkan minyak baru (13.5 tong).</li>
+                                    <li>Panaskan minyak.</li>
+                                </ul>
+                            </div>
+                            <div class="bg-gray-50 p-1.5 rounded border border-gray-100">
+                                <span class="font-bold text-xs text-indigo-700 block mb-0.5">Tugas Din:</span>
+                                <p class="text-[11px] text-gray-700">Sediakan bahan bancuhan tepung untuk operasi menggoreng.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LAJUR 2: OPERASI UTAMA -->
+            <div class="flex flex-col bg-orange-50 rounded-xl p-3 border border-orange-100 col-bg">
+                <h2 class="text-base font-bold text-orange-800 mb-3 flex items-center border-b border-orange-200 pb-1">
+                    <svg class="w-5 h-5 mr-1 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                    Operasi Utama (Mula 9:00 AM)
+                </h2>
+
+                <div class="flex-1 flex flex-col justify-start space-y-2.5">
+                    
+                    <div class="bg-white rounded-lg p-2.5 task-card border-l-4 border-purple-500 flex items-center justify-between">
+                        <div>
+                            <h3 class="text-sm font-bold text-gray-800">Supri</h3>
+                            <p class="text-xs text-gray-500">Sepanjang operasi</p>
+                        </div>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-800 text-xs rounded-lg font-bold border border-purple-200 shadow-sm">Mixing</span>
+                    </div>
+
+                    <div class="bg-white rounded-lg p-2.5 task-card border-l-4 border-purple-500 flex items-center justify-between">
+                        <div>
+                            <h3 class="text-sm font-bold text-gray-800">Kak Tri</h3>
+                            <p class="text-xs text-gray-500">Sepanjang operasi</p>
+                        </div>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-800 text-xs rounded-lg font-bold border border-purple-200 shadow-sm">Mixing</span>
+                    </div>
+
+                    <div class="bg-white rounded-lg p-2.5 task-card border-l-4 border-orange-500 flex items-center justify-between">
+                        <div>
+                            <h3 class="text-sm font-bold text-gray-800">Din</h3>
+                            <p class="text-xs text-gray-500">Sepanjang operasi</p>
+                        </div>
+                        <span class="px-3 py-1 bg-orange-100 text-orange-800 text-xs rounded-lg font-bold border border-orange-200 shadow-sm">Goreng</span>
+                    </div>
+
+                    <div class="bg-white rounded-lg p-2.5 task-card border-l-4 border-teal-500 flex flex-col">
+                        <div class="flex justify-between items-center mb-1.5">
+                            <h3 class="text-sm font-bold text-gray-800">Baiya & Wan</h3>
+                            <span class="px-3 py-1 bg-teal-100 text-teal-800 text-[10px] rounded-lg font-bold border border-teal-200 shadow-sm uppercase tracking-wider">Tugas Khas</span>
+                        </div>
+                        <div class="bg-teal-50 p-2 rounded border border-teal-100">
+                            <p class="text-xs font-semibold text-teal-800 flex items-center">
+                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                                Goreng Ikan Bilis (Untuk Sample)
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- LAJUR 3: WAKTU PULANG -->
+            <div class="flex flex-col bg-red-50 rounded-xl p-3 border border-red-100 col-bg">
+                <h2 class="text-base font-bold text-red-800 mb-3 flex items-center border-b border-red-200 pb-1">
+                    <svg class="w-5 h-5 mr-1 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+                    Jadual Waktu Pulang
+                </h2>
+
+                <div class="space-y-3 flex-1">
+                    
+                    <div class="bg-white rounded-lg p-3 task-card border-t-4 border-red-400 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 bg-red-100 text-red-800 text-[10px] font-bold px-2 py-1 rounded-bl-lg">Balik Awal</div>
+                        <h3 class="text-2xl font-bold text-red-500 mb-2 mt-1">5:30 PM</h3>
+                        <div class="flex gap-2">
+                            <span class="px-3 py-1 bg-gray-100 text-gray-800 text-sm rounded-full font-bold shadow-sm border border-gray-200 flex-1 text-center">Din</span>
+                            <span class="px-3 py-1 bg-gray-100 text-gray-800 text-sm rounded-full font-bold shadow-sm border border-gray-200 flex-1 text-center">Wan</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg p-3 task-card border-t-4 border-amber-400">
+                        <h3 class="text-2xl font-bold text-amber-500 mb-2">5:50 PM</h3>
+                        <div class="flex">
+                            <span class="px-3 py-1 bg-gray-100 text-gray-800 text-sm rounded-full font-bold shadow-sm border border-gray-200 flex-1 text-center">Supri</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg p-3 task-card border-t-4 border-green-400">
+                        <h3 class="text-2xl font-bold text-green-500 mb-2">6:00 PM</h3>
+                        <div class="flex gap-2">
+                            <span class="px-3 py-1 bg-gray-100 text-gray-800 text-sm rounded-full font-bold shadow-sm border border-gray-200 flex-1 text-center">Kak Tri</span>
+                            <span class="px-3 py-1 bg-gray-100 text-gray-800 text-sm rounded-full font-bold shadow-sm border border-gray-200 flex-1 text-center">Baiya</span>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="mt-2 text-center text-[10px] text-gray-500 font-medium pt-2 border-t border-red-200">
+                    Sila pastikan kawasan kerja dibersihkan sebelum pulang.
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function updateTime() {
+            const timeElement = document.getElementById('current-time');
+            const now = new Date();
+            
+            const options = { 
+                hour: 'numeric', 
+                minute: '2-digit', 
+                second: '2-digit', 
+                hour12: true,
+                timeZone: 'Asia/Kuala_Lumpur'
+            };
+            
+            let timeString = now.toLocaleTimeString('ms-MY', options);
+            timeElement.textContent = "Masa Sekarang: " + timeString;
+        }
+
+        setInterval(updateTime, 1000);
+        updateTime(); 
+    </script>
+</body>
+</html>
